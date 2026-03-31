@@ -46,9 +46,27 @@ double raizCuadrada(double x) {
 // 6 Díaz Vega Greta Solange <gretadiaz01@gmail.com>
 
 // 7 DÍAZ VEGA OLENKA HELENE <olenka.diaz.v@uni.pe>
+int exponencial(int x, int y) {
+    int resultado = 1;
+
+    for (int i = 0; i < y; i++) {
+        resultado *= x;
+    }
+
+    return resultado;
+}
 
 // 8 Gallo Lugo Carlos enrique <cgallolugo@gmail.com>
-
+int fibo(int n) {
+    if (n==1) return 1;
+    int a=0, b=1,c;
+    for (int i=2; i<=n;i++){
+        c = a+b;
+        a = b;
+        b = c;
+    }
+    return b;
+}
 // 9 Lopez Flores Royer Amed <roamlofl9@gmail.com>
 // abs
 double valor_absoluto(double x) {

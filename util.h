@@ -21,6 +21,7 @@ double raizCuadrada(double x);
 // 7 DÍAZ VEGA OLENKA HELENE <olenka.diaz.v@uni.pe>
 
 // 8 Gallo Lugo Carlos enrique <cgallolugo@gmail.com>
+int fibo(int n);
 
 // 9 Lopez Flores Royer Amed <roamlofl9@gmail.com>
 double valor_absoluto(double x);
