@@ -8,6 +8,9 @@ int suma(int x, int y) {
 }
 
 // 1 Alvarez Cadillo, Michell Adrian <<michell.aac.1106@gmail.com>,
+int resta(int x, int y) {
+    return x - y;
+}
 
 int resta(int x, int y) {
     return x - y;
@@ -61,6 +64,10 @@ unsigned int factorial(unsigned int number){
 }
 
 // 11 Oscar Toledo Guerrero <tgoscar@gmail.com>
+
+int resta(int z, int w) {
+    return z - w;
+}
 
 // 12 Quispe Calloapaza, David Saul <quispedavid987@gmail.com>
 double Promedio(double x0, double y0) {

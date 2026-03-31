@@ -28,6 +28,7 @@ double valor_absoluto(double x);
 unsigned int factorial(unsigned int number);
 
 // 11 Oscar Toledo Guerrero <tgoscar@gmail.com>
+int resta(int z, int w);
 
 // 12 Quispe Calloapaza, David Saul <quispedavid987@gmail.com>
 double Promedio(double x0, double y0);

@@ -7,7 +7,7 @@ using namespace std;
 // Ernesto Cuadros
 // g++ -std=c++17 main.cpp util.cpp -o main
 int main() {
-
+    
     // 0. Ernesto Cuadros <ecuadros@spc.org.pe>
     int x0 = 1, y0 = 2;
     int a0 = suma(x0, y0);
@@ -63,7 +63,10 @@ int main() {
     cout << "Demo Miranda Zarate Jorge: " << u0 << "! = " << factorial(u0) << endl;
 
     // 11 Oscar Toledo Guerrero <tgoscar@gmail.com>
-
+    int x5 = 4, y5 = 4;
+    int o = resta(x5, y5);
+    cout << "Oscar Toledo Guerrero: " << o << endl;
+    
     // 12 Quispe Calloapaza, David Saul <quispedavid987@gmail.com>
     double a1 = 5., b1 = 6.;
     double p0 = Promedio(a1, b1);
