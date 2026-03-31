@@ -31,9 +31,9 @@ int main() {
 
     // 3 Castro Chaupis, Armando Cristhian <armandocristhiancastrochaupis@gmail.com>,
     // Dividir
-    int x3 = 3,y3=2;
-    float a3 = dividir(x3,y3);
-    cout << "Armando Cristhian Castro Chaupis: " << a3 << endl;
+    T3F x3=5,y3=6;
+    T3F a3 = dividir(x3,y3);
+    cout << "Armando Castro:" <<a3 <<endl;
 
     // 4 Castro Galindo Carlo André <carlocastrogalindo@gmail.com>,
     // Potencia

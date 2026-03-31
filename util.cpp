@@ -24,9 +24,9 @@ T1 multiplicacion(T1 x, T1 y) {
 }
 
 // 3 Castro Chaupis, Armando Cristhian <armandocristhiancastrochaupis@gmail.com>,
-float dividir(int x,int y)
+T3F dividir(T3F x,T3F y)
 {
-    return (float)x/(float)y;
+    return x/y;
 }
 // 4 Castro Galindo Carlo André <carlocastrogalindo@gmail.com>,
 int potencia(int base, int exponente) {
