@@ -37,8 +37,8 @@ int main() {
 
     // 4 Castro Galindo Carlo André <carlocastrogalindo@gmail.com>,
     // Potencia
-    int base = 2, exponente = 3;
-    int a4 = potencia(base, exponente);
+    T1 base = 2, exponente = 3;
+    T1 a4 = potencia(base, exponente);
     cout << "Castro Galindo Carlo André: " << a4 << endl;
     
     // 5 Diaz Tapia Adderly Orlando <adderly.diaz.tapia@gmail.com>
