@@ -6,6 +6,7 @@ int suma(int x, int y);
 // 1 Alvarez Cadillo, Michell Adrian <<michell.aac.1106@gmail.com>,
 
 // 2 Bernaola Gayoso César Raúl <bernaolacesar@gmail.com>,
+int multiplicacion(int x, int y);
 
 // 3 Castro Chaupis, Armando Cristhian <armandocristhiancastrochaupis@gmail.com>,
 
