@@ -19,7 +19,7 @@ T1 resta(T1 x, T1 y) {
     return x - y;
 }
 // 2 Bernaola Gayoso César Raúl <bernaolacesar@gmail.com>,
-int multiplicacion(int x, int y) {
+T1 multiplicacion(T1 x, T1 y) {
     return x * y;
 }
 

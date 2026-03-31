@@ -11,7 +11,7 @@ int resta(int x, int y);
 T1 resta(T1 x, T1 y);
 
 // 2 Bernaola Gayoso César Raúl <bernaolacesar@gmail.com>,
-int multiplicacion(int x, int y);
+T1 multiplicacion(T1 x, T1 y);
 
 // 3 Castro Chaupis, Armando Cristhian <armandocristhiancastrochaupis@gmail.com>,
 float dividir(int x,int y);
