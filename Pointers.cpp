@@ -6,6 +6,7 @@
 #include "array2.h"
 #include "array3.h"
 #include "array4.h"
+#include "matrix1.h"
 
 using namespace std;
 
@@ -227,4 +228,13 @@ void DemoPointersVector5(){
 }
 
 void DemoPointersMatrix1(){
+    Matrix1<TI> matrix;
+    ifstream ifs("matrix1.txt");
+    ifs >> matrix;
+    cout << matrix;
+    cout << "Aplicando Square\n";
+    matrix.ApplyFunctionToAll(Square<TI>);
+    cout << matrix;
+    ofstream ofs("matrix2.txt");
+    ofs << matrix ;
 }
