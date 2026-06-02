@@ -246,4 +246,6 @@ void DemoPointersMatrix1(){
     m1 = 5 * move(m2) + move(m3) * move(m4);
 
     cout << m1;
+
+    cout << m2;
 }
