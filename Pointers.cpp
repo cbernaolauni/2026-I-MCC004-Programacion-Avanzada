@@ -237,4 +237,13 @@ void DemoPointersMatrix1(){
     cout << matrix;
     ofstream ofs("matrix2.txt");
     ofs << matrix ;
+
+    ifstream f2("m2.txt"), f3("m3.txt"), f4("m4.txt");
+
+    Matrix1<TI> m1, m2, m3, m4;
+    f2 >> m2;  f3 >> m3;  f4 >> m4;
+
+    m1 = 5 * move(m2) + move(m3) * move(m4);
+
+    cout << m1;
 }
