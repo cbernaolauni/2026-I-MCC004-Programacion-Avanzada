@@ -5,12 +5,6 @@ LDFLAGS = -pthread # Añadido -pthread
 TARGET = main
 SRCS = main.cpp util.cpp \
        complex.cpp \
-       shapes/shape.cpp \
-       shapes/rectangle.cpp \
-       shapes/circle.cpp \
-       shapes/triangle.cpp \
-       shapes/square.cpp \
-       polimorfismo.cpp \
        BitSigno.cpp \
        Pointers.cpp \
        array1.cpp

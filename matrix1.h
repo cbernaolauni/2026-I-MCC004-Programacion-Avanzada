@@ -17,7 +17,7 @@ class Matrix1 {
         size_t   m_rows = 0, m_cols = 0;
     public:
         Matrix1()      { }
-        Matrix1(Matrix1 &other) = delete; // No copy constructor
+        //Matrix1(Matrix1 &other) = delete; // No copy constructor
         Matrix1(const Matrix1 &other);
         Matrix1(Matrix1 &&other); 
         ~Matrix1()     { Destroy(); }
@@ -31,6 +31,10 @@ class Matrix1 {
         void operator*=(const Matrix1 &other);
         void operator*=(const T &scalar);
         Matrix1<T>& operator=(Matrix1<T> &&other);
+        T*       operator[](size_t row);
+        const T* operator[](size_t row) const;
+        Matrix1<T> Transpose() const;
+        Matrix1<T> RowEchelon(bool reduced = false) const;
         void Destroy();
 };
 
@@ -170,28 +174,94 @@ Matrix1<T>& Matrix1<T>::operator=(Matrix1<T> &&other) {
 }
 
 template <typename T>
-Matrix1<T> operator+(Matrix1<T> &&lhs, const Matrix1<T> &rhs) {
+Matrix1<T> operator+(Matrix1<T> lhs, const Matrix1<T> &rhs) {
     lhs += rhs;
     return move(lhs);
 }
 
 template <typename T>
-Matrix1<T> operator-(Matrix1<T> &&lhs, const Matrix1<T> &rhs) {
+Matrix1<T> operator-(Matrix1<T> lhs, const Matrix1<T> &rhs) {
     lhs -= rhs;
     return move(lhs);
 }
 
 template <typename T>
-Matrix1<T> operator*(Matrix1<T> &&lhs, const Matrix1<T> &rhs) {
+Matrix1<T> operator*(Matrix1<T> lhs, const Matrix1<T> &rhs) {
     lhs *= rhs;
     return move(lhs);
 }
 
 // escalar * matriz
 template <typename T>
-Matrix1<T> operator*(const T &scalar, Matrix1<T> &&rhs) {
-    rhs *= scalar;
-    return move(rhs);
+Matrix1<T> operator*(const T &scalar, Matrix1<T> lhs) {
+    lhs *= scalar;
+    return move(lhs);
+}
+
+template <typename T>
+Matrix1<T> operator*(Matrix1<T> lhs, const T &scalar) {
+    lhs *= scalar;
+    return move(lhs);
+}
+
+template <typename T>
+T* Matrix1<T>::operator[](size_t row) {
+    cout << "Accediendo a fila " << row << endl;
+    cout << "Fila " << m_rows << endl;
+    assert(row <= m_rows);
+    return m_pMat[row];
+}
+
+template <typename T>
+const T* Matrix1<T>::operator[](size_t row) const {
+    assert(row <= m_rows);
+    return m_pMat[row];
+}
+
+template <typename T>
+Matrix1<T> Matrix1<T>::Transpose() const {
+    Matrix1<T> result;
+    result.m_rows = m_cols;
+    result.m_cols = m_rows;
+    result.Create();
+    for (size_t i = 0; i < m_rows; ++i)
+        for (size_t j = 0; j < m_cols; ++j)
+            result.m_pMat[j][i] = m_pMat[i][j];
+    return result;
+}
+
+template <typename T>
+Matrix1<T> Matrix1<T>::RowEchelon(bool reduced) const {
+    Matrix1<T> result(*this);
+    size_t pivot_row = 0;
+
+    for (size_t col = 0; col < result.m_cols && pivot_row < result.m_rows; ++col) {
+        size_t found = result.m_rows; // centinela
+        for (size_t row = pivot_row; row < result.m_rows; ++row) {
+            if (result.m_pMat[row][col] != T{}) { found = row; break; }
+        }
+        if (found == result.m_rows) continue;
+
+        // Intercambiar fila encontrada con la fila pivote
+        if (found != pivot_row)
+            swap(result.m_pMat[found], result.m_pMat[pivot_row]);
+
+        T pivot = result.m_pMat[pivot_row][col];
+
+        // Normalizar fila pivote (pivote = 1)
+        for (size_t j = 0; j < result.m_cols; ++j)
+            result.m_pMat[pivot_row][j] /= pivot;
+
+        size_t start = reduced ? 0 : pivot_row + 1;
+        for (size_t row = start; row < result.m_rows; ++row) {
+            if (row == pivot_row) continue;
+            T factor = result.m_pMat[row][col];
+            for (size_t j = 0; j < result.m_cols; ++j)
+                result.m_pMat[row][j] -= factor * result.m_pMat[pivot_row][j];
+        }
+        ++pivot_row;
+    }
+    return result;
 }
 
 #endif // __MATRIX_H__

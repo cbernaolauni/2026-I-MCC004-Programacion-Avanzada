@@ -240,12 +240,34 @@ void DemoPointersMatrix1(){
 
     ifstream f2("m2.txt"), f3("m3.txt"), f4("m4.txt");
 
-    Matrix1<TI> m1, m2, m3, m4;
+    Matrix1<TI> m1, m2, m3, m4, m5, t, ref, rref, m6;
     f2 >> m2;  f3 >> m3;  f4 >> m4;
 
-    m1 = 5 * move(m2) + move(m3) * move(m4);
+    m1 = 5 * m2 + m3 * m4;
 
     cout << m1;
 
     cout << m2;
+
+    m5 = 5 * m2 + m3 * m4;
+    
+    cout << m5;
+
+    cout << m2;
+
+    m2[2][2] = 8;
+
+    cout << m2;
+
+    t    = m5.Transpose();
+    ref  = m3.RowEchelon();        // REF
+    rref = m4.RowEchelon(true);    // RREF
+
+    cout << "Transpuesta de m2:\n" << t;
+    cout << "REF de m3:\n" << ref;
+    cout << "RREF de m4:\n" << rref;
+
+    m6 =  m5 * 6;
+
+    cout << m6;
 }
