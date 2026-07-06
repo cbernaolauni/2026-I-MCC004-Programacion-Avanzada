@@ -28,5 +28,8 @@ using Area     = double;
 using TI = int;
 using TP = int;
 
+using MatrizT = int;
+using MatrizType = double;
+
 #endif // __TYPES_H__
 

@@ -19,6 +19,7 @@ class Matrix1 {
         Matrix1()      { }
         //Matrix1(Matrix1 &other) = delete; // No copy constructor
         Matrix1(const Matrix1 &other);
+        Matrix1(size_t rows, size_t cols);
         Matrix1(Matrix1 &&other); 
         ~Matrix1()     { Destroy(); }
         void     Create();
@@ -39,6 +40,13 @@ class Matrix1 {
 };
 
 template <typename T>
+Matrix1<T>::Matrix1(size_t rows, size_t cols)
+    : m_rows(rows), m_cols(cols) {
+    if (m_rows > 0 && m_cols > 0)
+        Create();
+}
+
+template <typename T>
 Matrix1<T>::Matrix1(const Matrix1<T> &other) 
     : m_rows(other.m_rows), m_cols(other.m_cols) {
     if (m_rows > 0 && m_cols > 0) {
@@ -54,7 +62,7 @@ void Matrix1<T>::Create()
 {   assert(m_rows > 0 && m_cols > 0);
     m_pMat = new T *[m_rows];
     for(size_t i = 0 ; i < m_rows ; ++i)
-        m_pMat[i] = new T[m_cols];
+        m_pMat[i] = new T[m_cols]{};
 }
 
 // Move constructor
