@@ -31,5 +31,9 @@ using TP = int;
 using MatrizT = int;
 using MatrizType = double;
 
+using MatrizInt    = int;
+using MatrizFloat  = float;
+using MatrizDouble = double;
+
 #endif // __TYPES_H__
 
