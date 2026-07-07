@@ -214,8 +214,6 @@ Matrix1<T> operator*(Matrix1<T> lhs, const T &scalar) {
 
 template <typename T>
 T* Matrix1<T>::operator[](size_t row) {
-    cout << "Accediendo a fila " << row << endl;
-    cout << "Fila " << m_rows << endl;
     assert(row <= m_rows);
     return m_pMat[row];
 }
