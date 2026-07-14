@@ -7,7 +7,9 @@ SRCS = main.cpp util.cpp \
        complex.cpp \
        BitSigno.cpp \
        Pointers.cpp \
-       array1.cpp
+       array1.cpp \
+       demo_regex.cpp \
+       
 
 OBJS = $(SRCS:.cpp=.o)
 

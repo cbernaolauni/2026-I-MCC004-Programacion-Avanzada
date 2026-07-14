@@ -10,5 +10,6 @@ void DemoPointersVector5();
 
 void DemoPointersMatrix1();
 void DemoPointersMatrix2();
+void DemoRegex();
 
 #endif // __POINTERS_H__

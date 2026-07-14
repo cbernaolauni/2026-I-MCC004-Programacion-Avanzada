@@ -24,5 +24,6 @@ int main() {
     // DemoPointersVector4();
     // DemoPointersVector5();
     DemoPointersMatrix1();
+    DemoRegex();
     return 0;
 }
