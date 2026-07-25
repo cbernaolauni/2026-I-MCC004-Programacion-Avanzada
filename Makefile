@@ -9,6 +9,7 @@ SRCS = main.cpp util.cpp \
        Pointers.cpp \
        array1.cpp \
        demo_regex.cpp \
+       demo_new.cpp
        
 
 OBJS = $(SRCS:.cpp=.o)
